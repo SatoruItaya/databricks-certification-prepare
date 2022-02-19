@@ -1,0 +1,7 @@
+## authentication
+
+- Azure
+
+```
+$ az login
+```
