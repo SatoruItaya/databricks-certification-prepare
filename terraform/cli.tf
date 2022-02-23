@@ -1,4 +1,4 @@
-resource "null_resource" "databricks_configure" {
+resource "null_resource" "configure" {
   triggers = {
     token = databricks_token.pat.token_value
   }
