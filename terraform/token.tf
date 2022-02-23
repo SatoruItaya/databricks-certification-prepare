@@ -4,7 +4,7 @@ resource "databricks_token" "pat" {
   lifetime_seconds = 86400
 
   provisioner "local-exec" {
-    command = "echo ${self.token_value} >> token"
+    command = "echo ${self.token_value} > token"
   }
 }
 

@@ -8,3 +8,8 @@ provider "databricks" {
   alias = "created_workspace"
   host  = azurerm_databricks_workspace.dbcert.workspace_url
 }
+
+provider "databricks" {
+  alias = "created_workspace"
+  host  = azurerm_databricks_workspace.dbcert.workspace_url
+}
