@@ -11,10 +11,21 @@ resource "null_resource" "configure" {
 # copy the retail_db folder
 resource "null_resource" "copy_retail_db" {
   triggers = {
-    token = null_resource.configure
+    token = null_resource.configure.id
   }
 
   provisioner "local-exec" {
     command = "databricks fs cp ../../../dgadiraju/retail_db dbfs:/public/retail_db --recursive"
+  }
+}
+
+# copy the retail_db_json folder
+resource "null_resource" "copy_retail_db_json" {
+  triggers = {
+    token = null_resource.configure.id
+  }
+
+  provisioner "local-exec" {
+    command = "databricks fs cp ../../../itversity/retail_db_json dbfs:/public/retail_db_json --recursive"
   }
 }
